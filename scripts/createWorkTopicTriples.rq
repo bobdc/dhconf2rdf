@@ -1,0 +1,28 @@
+# Convert the 5 lines below to the following single triple:
+
+# <http://rdfdata.org/dha/work/i1579> schema:topics <http://rdfdata.org/dha/topic/i3140> .
+
+#<http://rdfdata.org/dha/works_topics/i1>
+#        rdf:type   dha:works_topics ;
+#        dha:id     "1" ;
+#        dha:work   <http://rdfdata.org/dha/work/i1579> ;
+#        dha:topic  <http://rdfdata.org/dha/topic/i3140> .
+				
+# run as
+# arq --query createWorkTopicTriples.rq --data ../dh_conferences_rdf/works_topics.ttl > ../newrdf/workTopicTriples.ttl
+
+PREFIX dha:    <http://rdfdata.org/dha/ns/dh-abstracts/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/> 
+PREFIX dhat:   <http://rdfdata.org/dha/topic/>
+PREFIX dhaw:   <http://rdfdata.org/dha/work/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+CONSTRUCT {
+	  ?work dc:subject ?topic.
+}
+WHERE {
+  ?s a dha:works_topics ;
+       dha:work ?work ;
+       dha:topic ?topic . 
+  }

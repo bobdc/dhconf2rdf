@@ -1,0 +1,22 @@
+#  arq --query test1.rq --data ../dh_conferences_rdf/all.ttl
+
+PREFIX dha: <http://rdfdata.org/ns/dh-abstracts/>
+
+SELECT ?keyword (COUNT(*) AS ?workCount)
+ WHERE {
+
+  ?w a dha:works;
+     dha:title ?workTitle ;
+     dha:id ?workID .
+
+  ?wt a dha:works_keywords ;
+      dha:work ?workID ;
+      dha:keyword ?keywordID . 
+
+  ?t a dha:keywords;
+     dha:title ?keyword ;
+     dha:id ?keywordID .
+}
+GROUP BY ?keyword
+HAVING (?workCount > 30)
+ORDER BY DESC(?workCount)

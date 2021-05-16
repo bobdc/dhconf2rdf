@@ -1,0 +1,13 @@
+PREFIX dha:  <http://rdfdata.org/ns/dh-abstracts/>
+
+CONSTRUCT {
+  ?u a dha:languages ;
+  dha:id ?id ;
+  dha:title ?title .
+
+}
+FROM <file:../dh_conferences_data/languages.csv>
+# only generate with UUID if id isn't the first column?
+WHERE {
+  BIND (UUID() AS ?u)
+}

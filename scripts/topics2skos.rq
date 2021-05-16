@@ -1,0 +1,16 @@
+# run as
+# arq --query topics2skos.rq --data ../dh_conferences_rdf/topics.ttl > ../newrdf/skosTopics.ttl
+
+PREFIX dha:  <http://rdfdata.org/dha/ns/dh-abstracts/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?topic a skos:Concept ;
+  skos:prefLabel ?title ;
+  skos:inScheme dha:topicScheme . 
+}
+WHERE {
+  ?topic a dha:Topic;
+	   dha:title ?title . 
+  }

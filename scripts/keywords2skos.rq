@@ -1,0 +1,16 @@
+# run as
+# arq --query keywords2skos.rq --data ../dh_conferences_rdf/keywords.ttl > ../newrdf/skosKeywords.ttl
+
+PREFIX dha:  <http://rdfdata.org/dha/ns/dh-abstracts/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?keyword a skos:Concept ;
+  skos:prefLabel ?title ;
+  skos:inScheme dha:keywordScheme . 
+}
+WHERE {
+  ?keyword a dha:Keyword;
+	   dha:title ?title . 
+  }

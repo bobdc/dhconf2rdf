@@ -1,0 +1,19 @@
+# This is like createWorkTopicTriples.rq but for keywords.
+				
+# run as
+# arq --query createWorkKeywordTriples.rq --data ../dh_conferences_rdf/works_keywords.ttl  > ../newrdf/workKeywordTriples.ttl
+
+PREFIX dha:    <http://rdfdata.org/dha/ns/dh-abstracts/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/> 
+PREFIX dhak:   <http://rdfdata.org/dha/keyword/>
+PREFIX dhaw:   <http://rdfdata.org/dha/work/>
+
+CONSTRUCT {
+  ?work schema:keywords ?keyword.
+}
+WHERE {
+  ?s a dha:works_keywords ;
+       dha:work ?work ;
+       dha:keyword ?keyword . 
+  }

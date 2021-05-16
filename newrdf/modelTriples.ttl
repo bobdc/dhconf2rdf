@@ -1,0 +1,38 @@
+# This has triples created by hand (and some global replaces)
+
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dha:   <http://rdfdata.org/dha/ns/dh-abstracts/> .
+@prefix dhak:  <http://rdfdata.org/dha/keyword/> .
+
+dhak:r10001 a               skos:Concept ;
+            skos:inScheme   dha:keywordScheme ;
+            skos:prefLabel  "Text Encoding Initiative (TEI)" .
+
+dhak:i1100 skos:broader dhak:r10001 . # generated tei"
+dhak:i2639 skos:broader dhak:r10001 . # tei and structural markup"
+dhak:i2641 skos:broader dhak:r10001 . # tei encoding"
+dhak:i2642 skos:broader dhak:r10001 . # tei markup"
+dhak:i2643 skos:broader dhak:r10001 . # tei processing model"
+dhak:i2644 skos:broader dhak:r10001 . # tei simple"
+dhak:i2645 skos:broader dhak:r10001 . # tei xml"  
+dhak:i2647 skos:broader dhak:r10001 . # tei-xml"  
+dhak:i2882 skos:broader dhak:r10001 . # verse formalisms in xml/tei" 
+dhak:i3032 skos:broader dhak:r10001 . # xml tei"
+dhak:i3034 skos:broader dhak:r10001 . # xml-tei"
+dhak:i3035 skos:broader dhak:r10001 . # xml-tei visualisation tools"
+dhak:i5410 skos:broader dhak:r10001 . # tei myths"  
+dhak:i5757 skos:broader dhak:r10001 . # tei"
+dhak:i5906 skos:broader dhak:r10001 . # xml/tei"   
+dhak:i6656 skos:broader dhak:r10001 . # tei-sgml applications" 
+dhak:i6707 skos:broader dhak:r10001 . # sgml/tei"  
+dhak:i6995 skos:broader dhak:r10001 . # TEI"
+dhak:i7074 skos:broader dhak:r10001 . # Text Encoding Initiative" 
+dhak:i7541 skos:broader dhak:r10001 . # TEI-XML"   
+dhak:i8243 skos:broader dhak:r10001 . # text encoding initiative"
+dhak:i8244 skos:broader dhak:r10001 . # tei documentation" 
+dhak:i8249 skos:broader dhak:r10001 . # tei rdf webservices" 
+dhak:i8350 skos:broader dhak:r10001 . # api rest graphql tei corpus dictionaries south asia"
+dhak:i8597 skos:broader dhak:r10001 . # text encoding initiative (tei)" 
+dhak:i8598 skos:broader dhak:r10001 . # charters encoding initiative (tei)" 
+

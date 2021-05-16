@@ -42,7 +42,7 @@ This project has scripts that convert data from the [The Index of Digital Humani
     arq --query scripts/createWorkKeywordTriples.rq --data dh_conferences_rdf/works_keywords.ttl  > newrdf/workKeywordTriples.ttl
     ```
     e.g. `dhaw:i2792  schema:keywords  dhak:i1680 , dhak:i2800 , dhak:i1568 , dhak:i6285 , dhak:i806 .`
-    ```
+
     Now the works_keywords.ttl triples are no longer necessary; they were an artifact of the need of relational databases to have a separate table to link rows of one table to another. 
 
 8. Same deal to connect works to topics:
@@ -81,7 +81,9 @@ WHERE {
       dha:title ?title .
 }
 ```
-This lists the years that papers were submitted with a TEI keyword  and how many were submitted each year: 
+So adding a little bit of semantics in the form of explicit relationships between related topics has made it possible to find more papers about TEI.
+
+This next query lists the years that papers were submitted with any kind of TEI keyword  and how many were submitted each year: 
 ```
 PREFIX schema: <http://schema.org/> 
 PREFIX dha:    <http://rdfdata.org/dha/ns/dh-abstracts/>

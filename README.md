@@ -11,11 +11,11 @@ This project has scripts that convert data from the [The Index of Digital Humani
 
 ## steps to reproduce
 
-1. Download the "Full Data" zip file (not the "Simple CSV") one from [https://dh-abstracts.library.cmu.edu/downloads](https://dh-abstracts.library.cmu.edu/downloads.).
+1. Download the "Full Data" zip file (not the "Simple CSV") one from [https://dh-abstracts.library.cmu.edu/downloads](https://dh-abstracts.library.cmu.edu/downloads).
 
-2. From this `dhconfrdf` directory, unzip that zip file so that it creates a `dh_conferences_data/` subdirectory.
+2. From this `dhconf2rdf` directory, unzip that zip file so that it creates a `dh_conferences_data/` subdirectory.
  
-3. Adjust the `scripts/makeQueries.pl` script if necessary (set `$tarqlPath` to point to where you have tarql) and then run it as shown. This does two things: 1. it creates a `dhconferences_sparql/*.rq` SPARQL query file for tarql to run on each CSV file from the downloaded zip file and 2. adds a line to `makeRDF.sh` to run `tarql` against the CSV file with that query, putting the output RDF in `dh_conferences_rdf/`.
+3. Adjust the `scripts/makeQueries.pl` script if necessary (set `$tarqlPath` to point to where you have tarql) and then run it as shown below. This does two things: 1. it creates a `dhconferences_sparql/*.rq` SPARQL query file for tarql to run on each CSV file from the downloaded zip file and 2. adds a line to `makeRDF.sh` to run `tarql` against the CSV file with that query, putting the output RDF in `dh_conferences_rdf/`.
     ```
        scripts/makeQueries.pl > makeRDF.sh
     ```
@@ -56,6 +56,8 @@ The `newrdf/` directory already has `modelTriples.ttl` in it. This does two thin
 After loading all of the `ch_ conferences_rdf/` and `newrdf/` data into a triplestore, the following SPARQL query lists all the work titles tagged with "tei", which as of May of 2021 turns out to be 90: 
 
 ```
+# sample query 1
+
 PREFIX schema: <http://schema.org/> 
 PREFIX dha:    <http://rdfdata.org/dha/ns/dh-abstracts/>
 PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
@@ -69,6 +71,8 @@ WHERE {
 ```
 Now list the works that are tagged with something in the taxonomic subtree of "Text Encoding Initiative (TEI)" (hereafter, "a TEI keyword"); it turns out to be 132:
 ```
+# sample query 2
+
 PREFIX schema: <http://schema.org/> 
 PREFIX dha:    <http://rdfdata.org/dha/ns/dh-abstracts/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -85,6 +89,8 @@ So adding a little bit of semantics in the form of explicit relationships betwee
 
 This next query lists the years that papers were submitted with any kind of TEI keyword  and how many were submitted each year: 
 ```
+# sample query 3
+
 PREFIX schema: <http://schema.org/> 
 PREFIX dha:    <http://rdfdata.org/dha/ns/dh-abstracts/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>

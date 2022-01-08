@@ -1,0 +1,11 @@
+dh_conferences_data/
+dh_conferences_data/*
+dh_conferences_sparql/*.rq
+dh_conferences_rdf/*.ttl
+newrdf/skosKeywords.ttl
+newrdf/skosTopics.ttl
+newrdf/workKeywordTriples.ttl
+newrdf/workTopicTriples.ttl
+
+
+

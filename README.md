@@ -13,7 +13,9 @@ This project has scripts that convert data from the [The Index of Digital Humani
 
 1. Download the "Full Data" zip file (not the "Simple CSV") one from [https://dh-abstracts.library.cmu.edu/downloads](https://dh-abstracts.library.cmu.edu/downloads).
 
-2. From this `dhconf2rdf` directory, unzip that zip file so that it creates a `dh_conferences_data/` subdirectory.
+2. From this `dhconf2rdf` directory, unzip that zip file so that it creates a `dh_conferences_data/` subdirectory. 
+
+(Note that `fullConversion.sh` script runs all the remaining commands in the next six steps.)
  
 3. Adjust the `scripts/makeQueries.pl` script if necessary (set `$tarqlPath` to point to where you have tarql) and then run it as shown below. This does two things: 1. it creates a `dhconferences_sparql/*.rq` SPARQL query file for tarql to run on each CSV file from the downloaded zip file and 2. adds a line to `makeRDF.sh` to run `tarql` against the CSV file with that query, putting the output RDF in `dh_conferences_rdf/`.
     ```

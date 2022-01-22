@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 # typically run as
-# ./makeQueries.pl > makeRDF.sh
+# ./scripts/makeQueries.pl > makeRDF.sh
 
 # This script uses tarql to convert dh_conferences data to RDF and
 # assumes that:
@@ -42,7 +42,7 @@ use strict;
 my $URIStub = "http://rdfdata.org/dha";
 my $tarqlPath="~/bin/tarql-1.2/bin/tarql";
 
-my @foreignKeyFields = ("conference","organizer","country", "organizer", "institution", "author", "affiliation", "work", "keyword", "topic");
+my @foreignKeyFields = ("conference","organizer","country", "organizer", "institution", "author", "affiliation", "work", "keyword", "topic", "work_type");
 
 # initialize
 my $file = "";
